@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { Header as NavigationHeader } from 'react-navigation';
+import { Header as NavigationHeader } from 'react-navigation-stack';
 import get from 'lodash/get';
-import Container from 'shared/src/components/layout/Container';
+import Container from 'potluckyum-shared/src/components/layout/Container';
 
 class Header extends PureComponent {
 	render() {

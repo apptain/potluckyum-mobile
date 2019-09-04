@@ -4,7 +4,7 @@ import {
 	Platform,
 	StyleSheet,
 } from 'react-native';
-import Icon from 'shared/src/components/common/Icon';
+import Icon from 'potluckyum-shared/src/components/common/Icon';
 
 class HeaderBackImage extends PureComponent {
 	render() {

@@ -1,6 +1,6 @@
 /** @format */
 import { AppRegistry } from 'react-native';
-import setup from 'shared/src/setup';
+import setup from 'potluckyum-shared/src/setup';
 import App from './src/App';
 import { name as appName } from './app.json';
 

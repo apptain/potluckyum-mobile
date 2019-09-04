@@ -1,20 +1,18 @@
 {
   "name": "potluckyum-mobile",
-  "version": "0.0.1",
-  "private": true,
+  "version": "0.0.2",
   "scripts": {
-    "start": "react-native start",
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint ./"
   },
   "dependencies": {
-    "azure-storage": "^2.10.3",
     "color": "3.1.2",
-    "expo": "^34.0.4",
     "jest-cli": "24.9.0",
-    "lodash": "4.17.15",
     "moment": "2.24.0",
-    "native-base": "2.13.5",
+    "potluckyum-shared": "^0.0.4",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
     "react-native": "0.60.5",
@@ -24,7 +22,6 @@
     "react-native-elements": "^1.1.0",
     "react-native-fs": "^2.14.1",
     "react-native-gesture-handler": "^1.4.1",
-    "react-native-image-picker": "^1.1.0",
     "react-native-material-bottom-navigation": "^1.0.4",
     "react-native-material-textfield": "^0.12.0",
     "react-native-paper": "^2.16.0",
@@ -33,6 +30,7 @@
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.0.0",
     "react-navigation-redux-helpers": "^3.0.2",
+    "react-navigation-stack": "^1.5.1",
     "react-redux": "7.1.1",
     "redux": "4.0.4",
     "redux-form": "^8.2.6",

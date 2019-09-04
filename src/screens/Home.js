@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SharedHome from 'shared/src/screens/Home';
+import SharedHome from 'potluckyum-shared/src/screens/Home';
 
 export default class Home extends Component {
 	static navigationOptions = {
