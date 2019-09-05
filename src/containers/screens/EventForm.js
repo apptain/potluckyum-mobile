@@ -1,6 +1,6 @@
 import React, { Component} from "react";
 
-import { Text, View, Image, Platform, ScrollView, TouchableOpacity, TouchableHighlight, StyleSheet } from "react-native";
+import { Text, View, Alert, Image, Platform, ScrollView, TouchableOpacity, TouchableHighlight, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 
 
@@ -13,11 +13,24 @@ import { TextInput,
 
 import ActionButton from 'react-native-action-button';
 
+import Form from 'react-native-jsonschema-form'
+import eventSchema from 'potluckyum-shared/src/schemas/event/eventSchema';
+import eventUiSchema from 'potluckyum-shared/src/schemas/event/eventUISchema';
+
+function transformErrors(errors) {
+  let reterrors=_.filter(errors,error => {
+    console.log("eror",error.property)
+    // return true
+    return (error.message=="is a required property")
+
+    // return  (!(error && error.property === ".properties['viniButton'].type") )
+  })
+  return reterrors
+};
+
 class EventForm extends Component {
   componentDidMount() {
-    //Make content look like a multiline text input
-    const multiline = this.refs['content'];
-    multiline.setNativeProps({style: {  height:250 }});
+
   }
 
   selectPhoto() {
@@ -35,46 +48,21 @@ class EventForm extends Component {
   eventChange(fieldName, value){
     this.props.eventChange({...this.props.eventEdit, [fieldName]: value});
   }
-  imageCover(mediaUri, blobImagePath){
-    if(mediaUri){
-      return <CardCover source={{uri: mediaUri}} />
-    } else if(blobImagePath) {
-      return <CardCover source={{uri: blobImagePath}} />
-    }
-    else {
-      return <CardCover source={require('../../assets/image-placeholder.png')} />
-    }
-  }
 
   render() {
     let { title, content, mediaUri, blobImagePath } = this.props.eventEdit;
 
     return (
       <View style={styles.container}>
-        <Card>
-          {this.imageCover(mediaUri, blobImagePath)}
-          <ActionButton
-            buttonColor="rgba(231,76,60,1)"
-            autoInactive={true}
-            style={styles.fab}
-            onPress={() => { this.selectPhoto()}}
-          />
-        </Card>
-        <View style={styles.formContainer}>
-          <TextInput
-            label="Title"
-            value={title}
-            onChangeText={text => this.eventChange('title', text)}
-          />
-          <TextInput
-            ref={"content"}
-            multiline={true}
-            numberOfLines={100}
-            label="Content"
-            value={content}
-            onChangeText={text => this.eventChange('content', text)}
-          />
-        </View>
+        <View style={styles.notch}></View>
+        <Form
+            schema={eventSchema()}
+            uiSchema={eventUiSchema()}
+            submitTitle={"Create Event"}
+            noValidate={false}
+            liveValidate={true}
+            showErrorList={false}
+        />
       </View>
     );
   }
