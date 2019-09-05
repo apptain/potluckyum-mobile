@@ -6,12 +6,14 @@
     "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
     "android": "node node_modules/react-native/local-cli/cli.js run-android",
     "test": "jest",
-    "lint": "eslint ./"
+    "lint": "eslint ./",
+    "devtools": "react-devtools"
   },
   "dependencies": {
     "color": "3.1.2",
     "jest-cli": "24.9.0",
     "moment": "2.24.0",
+    "native-base": "^2.13.7",
     "potluckyum-shared": "^0.0.4",
     "prop-types": "^15.7.2",
     "react": "16.9.0",
@@ -22,15 +24,20 @@
     "react-native-elements": "^1.1.0",
     "react-native-fs": "^2.14.1",
     "react-native-gesture-handler": "^1.4.1",
+    "react-native-image-picker": "^1.1.0",
+    "react-native-jsonschema-form": "0.0.8",
     "react-native-material-bottom-navigation": "^1.0.4",
     "react-native-material-textfield": "^0.12.0",
     "react-native-paper": "^2.16.0",
+    "react-native-reanimated": "^1.2.0",
     "react-native-safari-view": "^2.1.0",
     "react-native-sensitive-info": "^5.5.0",
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.0.0",
+    "react-navigation-material-bottom-tabs": "^1.1.1",
     "react-navigation-redux-helpers": "^3.0.2",
     "react-navigation-stack": "^1.5.1",
+    "react-navigation-tabs": "^2.4.0",
     "react-redux": "7.1.1",
     "redux": "4.0.4",
     "redux-form": "^8.2.6",
@@ -38,7 +45,6 @@
     "redux-persist-sensitive-storage": "^1.0.0",
     "redux-saga": "^1.0.5",
     "remote-redux-devtools": "0.5.16",
-    "remote-redux-devtools-on-debugger": "^0.8.3",
     "tcomb-form-native": "^0.6.20",
     "util": "^0.12.1"
   },
@@ -47,6 +53,7 @@
     "babel-preset-react-native": "4.0.1",
     "jest": "24.9.0",
     "metro-react-native-babel-preset": "^0.56.0",
+    "react-devtools": "^3.6.3",
     "react-test-renderer": "16.9.0"
   },
   "jest": {

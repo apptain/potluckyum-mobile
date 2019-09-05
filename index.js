@@ -1,9 +1,4 @@
-/** @format */
 import { AppRegistry } from 'react-native';
-import setup from 'potluckyum-shared/src/setup';
-import App from './src/App';
-import { name as appName } from './app.json';
+import App from './App';
 
-const Root = setup(App);
-
-AppRegistry.registerComponent(appName, () => Root);
+AppRegistry.registerComponent('PotLuckYum', () => App);
